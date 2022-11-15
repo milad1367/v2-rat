@@ -1,0 +1,14 @@
+version: "3.0"
+
+services:
+  shadowsocks:
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      - PASSWORD=YOUR_PASSWORD
+      - SERVER_PORT=4443
+      - METHOD=aes-128-gcm
+    ports:
+      - 4443:4443
+
